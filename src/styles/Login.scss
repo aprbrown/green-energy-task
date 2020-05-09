@@ -1,0 +1,59 @@
+@import "./variables.scss";
+@import "./helpers.scss";
+
+.login-container {
+	background-color: $foreground-color;
+	width: $login-box-width;
+	height: $login-box-height;
+	margin-left: auto;
+	margin-right: auto;
+
+	filter: drop-shadow(2px 2px 6px $login-box-shadow);
+}
+
+.login-content {
+	display: grid;
+	flex-direction: column;
+	height: $login-box-height - ($login-box-padding-top-bottom * 2);
+	grid: 20px;
+	grid-gap: 20px;
+	grid-template-rows: min-content auto min-content;
+	padding: $login-box-padding-top-bottom $login-box-padding-left-right;
+}
+
+.form-text-input {
+	display: block;
+	width: 100%;
+	height: 60px;
+	border: 1px solid #d1d1d1;
+	border-radius: $border-radius;
+	font-size: x-large;
+	padding-left: 20px;
+}
+
+.form-text-input:focus {
+	background-color: $background-color;
+}
+
+.form-checkbox-toggle[type="checkbox"] {
+	float: left;
+	width: 1.4em;
+	height: 1.4em;
+	border: 1px solid #d1d1d1;
+	border-radius: $border-radius / 2;
+	appearance: none;
+	margin-right: 10px;
+}
+
+.form-checkbox-toggle[type="checkbox"]:checked {
+	appearance: checkbox;
+}
+
+.button {
+	font-size: large;
+	width: 160px;
+	height: 60px;
+	background-color: white;
+	border: 1px solid #d1d1d1;
+	border-radius: $border-radius;
+}
