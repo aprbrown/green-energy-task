@@ -9,6 +9,7 @@ function Login(props) {
 	const onSubmit = (e) => {
 		e.preventDefault();
 		console.log(email);
+		console.log(rememberMe);
 		// Handle login logic.
 	};
 
