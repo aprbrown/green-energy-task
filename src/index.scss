@@ -1,13 +1,16 @@
 @import "./styles/variables.scss";
 
+// Reset margin and padding site wide, set font family and default text colour.
 * {
 	margin: 0;
 	padding: 0;
 	color: $text-primary;
 	font-family: $font-stack;
 	letter-spacing: -0.05em;
+	box-sizing: border-box;
 }
 
+// Set the background colour for the body.
 body {
 	background-color: $background-color;
 }

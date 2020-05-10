@@ -6,41 +6,47 @@ function Login(props) {
 	const [email, setEmail] = useState("");
 	const [rememberMe, setRememberMe] = useState(false);
 
+	const onSubmit = (e) => {
+		e.preventDefault();
+		console.log(email);
+		// Handle login logic.
+	};
+
 	return (
 		<div className="login-container">
 			<div className="login-content">
-				<div>
-					<Logo style={{ height: 40 + "px" }} />
-				</div>
+				<Logo height={40} />
 
-				<div>
-					<h1 className="text-primary fw-500 mt-20">
+				<div className="pt-20">
+					<h1 className="text-primary fw-500 h1-title">
 						Example Login Screen
 					</h1>
-					<h3 className="text-secondary fw-300 mt-10">
+					<h2 className="text-secondary fw-400 pt-15 h2-subtitle">
 						Getting started with Green.
-					</h3>
+					</h2>
+				</div>
 
-					<div className="pt-60">
-						<label
-							htmlFor="email"
-							className="text-secondary fw-300 "
-						>
-							Email Address
-						</label>
+				<form onSubmit={onSubmit} className="form-grid pt-20">
+					<div>
+						<div>
+							<label
+								htmlFor="email"
+								className="text-secondary fw-300"
+							>
+								Email Address
+							</label>
+						</div>
+						<div className="pt-10">
+							<input
+								type="email"
+								name="email"
+								value={email}
+								onChange={(e) => setEmail(e.target.value)}
+								className="form-text-input"
+							/>
+						</div>
 					</div>
-
 					<div className="pt-10">
-						<input
-							type="email"
-							name="email"
-							value={email}
-							onChange={(e) => setEmail(e.target.value)}
-							className="form-text-input"
-						/>
-					</div>
-
-					<div className="pt-20">
 						<input
 							type="checkbox"
 							value={rememberMe}
@@ -48,15 +54,12 @@ function Login(props) {
 							className="form-checkbox-toggle"
 							onChange={() => setRememberMe(!rememberMe)}
 						/>
+						<label htmlFor="rememberMe" className="fw-400">
+							Remember this device
+						</label>
 					</div>
-					<div className="">
-						<label htmlFor="rememberMe">Remember this device</label>
-					</div>
-				</div>
-
-				<div className="submit-button-area">
-					<button className="button">Sign In</button>
-				</div>
+					<input className="button" type="submit" value="Sign In" />
+				</form>
 			</div>
 		</div>
 	);
